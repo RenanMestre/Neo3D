@@ -19,7 +19,7 @@ O sistema Neo3D foi desenvolvido para apresentar e divulgar os serviços de mode
 ## 👤 Proprietário
 
 - **Nome:** Guilherme Ariz  
-- **Profissão:** Técnico em Mecatrônica  
+- **Profissão:** Tecnólogo em Mecatrônica  
 - **Função:** Fundador e responsável pelo negócio
 
 ---
@@ -27,7 +27,7 @@ O sistema Neo3D foi desenvolvido para apresentar e divulgar os serviços de mode
 ## 💻 Desenvolvedor
 
 - **Nome:** Renan Mestre  
-- **Função:** Desenvolvimento completo do sistema (Frontend e otimizações)
+- **Função:** Desenvolvimento completo do sistema (Frontend, otimizações e segurança embarcada a códigos)
 
 ---
 
