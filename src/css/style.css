@@ -212,7 +212,7 @@ header a:hover {
     opacity: 0.5;
 }
 .destaque-item h3 {
-    color: #00f7ff;
+    color: white;
     font-size: 1.1rem;
     margin-top: 18px;
     margin-bottom: 0;
@@ -242,19 +242,27 @@ header a:hover {
 .form form {
     display: flex;
     flex-direction: column;
-    max-width: 750px;
+    max-width: 950px;
     margin: 0 auto;
-    padding: 30px 25px;
+    padding: 25px 25px;
     background: rgba(20, 20, 60, 0.85);
     border-radius: 15px;
     box-shadow: 0 4px 24px rgba(0, 247, 255, 0.08), 0 1.5px 8px rgba(0,0,0,0.25);
-    gap: 10px;
+    gap: 10px 0 0;
 }
 .form label {
     font-size: 1.05rem;
     color: #00f7ff;
-    margin-bottom: 4px;
+    margin-bottom: 10px;
     font-weight: 600;
+    margin: 0 0 10px 0;
+}
+
+.form textarea{
+    height: 100px;
+    max-height: 200px;
+    min-height: 80px;
+    resize: vertical;
 }
 .form input,
 .form textarea {
@@ -267,6 +275,9 @@ header a:hover {
     outline: none;
     transition: border-color 0.3s;
     resize: none;
+}
+.form input[type="text"]{
+    margin: 0 0 25px;
 }
 .form input:focus,
 .form textarea:focus {
@@ -289,6 +300,10 @@ header a:hover {
 .form button[type="submit"]:hover {
     background: linear-gradient(45deg, #f365f3, #00f7ff);
     transform: translateY(-2px) scale(1.03);
+}
+
+.form small {
+    margin: 5px 0 15px 0;
 }
 
 /* Footer */
@@ -318,6 +333,21 @@ footer svg {
     height: 30px;
     fill: #f365f3;
     transition: fill 0.3s;
+    position: absolute;
+    left: 2%;
+}
+footer a .tag {
+    color: white;
+    transition: fill 0.3s;
+    position: absolute;
+    left: 3%;
+    font-size: 1.2rem;
+    padding: 0 12px;
+    margin-left: 8px;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 1.2;
+    word-break: break-all;
 }
 
 /* Responsividade */
@@ -358,12 +388,10 @@ footer svg {
         font-size: 2.5rem;
         margin: 20px auto 30px;
     }
-
     p {
         font-size: 1.5rem;
         margin: 5px 0;
     }
-
     .catalog {
         margin: 25px auto 0;
         padding: 12px 24px;
@@ -383,8 +411,8 @@ footer svg {
         height: 350px;
     }
     .form form {
-        max-width: 100vw;
-        padding: 25px 5vw;
+        max-width: 100%;
+        padding: 15px 5vw;
     }
     footer {
         font-size: 0.95rem;
@@ -393,5 +421,16 @@ footer svg {
     footer svg {
         width: 22px;
         height: 22px;
+    }
+    footer a .tag {
+        font-size: 0.85rem;
+        padding: 0 10px;
+        margin-left: 6px;
+        vertical-align: middle;
+        display: inline-block;
+        line-height: 1.2;
+        color: #fff;
+        word-break: break-all;
+        left: 4%;
     }
 }
