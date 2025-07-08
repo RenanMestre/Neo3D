@@ -58,6 +58,26 @@ document.getElementById('formContato').addEventListener('reset', function() {
     document.getElementById('observacoes-contador').textContent = '150 caracteres restantes';
 });
 
+// Mascarando o telefone da pessoa
+document.getElementById('telefone').addEventListener('input', function (e) {
+  let valor = e.target.value.replace(/\D/g, ''); // remove tudo que não for número
+
+  if (valor.length > 11) valor = valor.slice(0, 11); // limita a 11 dígitos
+
+  // Aplica a máscara
+  if (valor.length > 0) {
+    valor = '(' + valor;
+  }
+  if (valor.length > 3) {
+    valor = valor.slice(0, 3) + ') ' + valor.slice(3);
+  }
+  if (valor.length > 10) {
+    valor = valor.slice(0, 10) + '-' + valor.slice(10);
+  }
+
+  e.target.value = valor;
+});
+
 // Enviando o foormulário para o WhatsApp
 document.getElementById("formContato").addEventListener("submit", function(e) {
     e.preventDefault(); // Impede o envio tradicional do formulário

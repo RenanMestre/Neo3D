@@ -76,13 +76,13 @@
             <h2 class="sub">Fale Conosco</h2>
             <form id="formContato" autocomplete="on">
             <label for="nome">Nome completo</label>
-            <input maxlength="50" type="text" id="nome" placeholder="Nome completo" required>
+            <input name="nome" maxlength="50" type="text" id="nome" placeholder="Nome completo" required>
             
             <label for="email">Email</label>
-            <input maxlength="45" type="text" id="email" placeholder="Email" required>
+            <input name="email" maxlength="50" type="email" id="email" placeholder="Email" required>
 
             <label for="telefone">Telefone (Opcional)</label>
-            <input maxlength="15" type="text" id="telefone" placeholder="(xx) xxxxx-xxxx">
+            <input name="telefone" type="tel" id="telefone" placeholder="(xx) xxxxx-xxxx" pattern="^\(\d{2}\) \d{5}-\d{4}$">
 
             <label for="pedido">Pedido</label>
             <textarea maxlength="150" id="pedido" placeholder="Pedido a ser realizado..." required></textarea>
