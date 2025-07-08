@@ -163,15 +163,32 @@ header a:hover {
     padding: 25px 18px 18px 18px;
     background: rgba(10, 10, 40, 0.85);
     position: relative;
-    min-width: 180px;
-    min-height: 260px;
+    min-width: 380px;
+    min-height: 460px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 2px solid #00f7ff;
-    box-shadow: 0 0 18px #00f7ff55, 0 1.5px 8px #000;
-    transition: box-shadow 0.3s, border-color 0.3s;
+    border: 2px solid transparent;
+    background-clip: padding-box;
     z-index: 1;
+}
+.destaque1::before,
+.destaque2::before,
+.destaque3::before,
+.destaque4::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 18px;
+    padding: 2px;
+    background: linear-gradient(90deg, #00f7ff 0%, #f365f3 100%);
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: -1;
 }
 .destaque1:hover,
 .destaque2:hover,
@@ -181,8 +198,8 @@ header a:hover {
     box-shadow: 0 0 24px #f365f3aa, 0 1.5px 8px #000;
 }
 .destaque-item img {
-    width: 140px;
-    height: 140px;
+    width: 350px;
+    height: 350px;
     object-fit: contain;
     margin-bottom: 10px;
 }
@@ -315,8 +332,8 @@ footer svg {
         gap: 18px;
     }
     .destaque-item img {
-        width: 110px;
-        height: 110px;
+        width: 310px;
+        height: 310px;
     }
     .form form {
         max-width: 95vw;
@@ -325,7 +342,7 @@ footer svg {
 }
 @media (max-width: 700px) {
     header {
-        flex-direction: column;
+        flex-direction: flex;
         gap: 10px;
         padding: 10px 5vw;
     }
@@ -338,24 +355,36 @@ footer svg {
         flex-wrap: wrap;
     }
     .title, .sub {
-        font-size: 1.3rem;
+        font-size: 2.5rem;
         margin: 20px auto 30px;
+    }
+
+    p {
+        font-size: 1.5rem;
+        margin: 5px 0;
+    }
+
+    .catalog {
+        margin: 25px auto 0;
+        padding: 12px 24px;
+        font-size: 1rem;
     }
     .hero {
         margin-top: 80px;
     }
     .destaque-item {
-        flex-direction: column;
-        gap: 10px;
+        gap: 15px;
         margin: 10px 0;
+        height: 100%;
+        width: 100%;
     }
     .destaque-item img {
-        width: 80px;
-        height: 80px;
+        width: 350px;
+        height: 350px;
     }
     .form form {
         max-width: 100vw;
-        padding: 10px 2vw;
+        padding: 25px 5vw;
     }
     footer {
         font-size: 0.95rem;

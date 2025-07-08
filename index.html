@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Neo3D</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Bootstrap CSS (completo e correto) -->
 </head>
 <body>
-    <!-- Loader animado -->
+    <!-- Carregamento da página -->
     <div id="loader">
         <svg width="60" height="60" viewBox="0 0 50 50">
             <circle cx="25" cy="25" r="20" fill="none" stroke="#00f7ff" stroke-width="5" stroke-linecap="round" stroke-dasharray="31.4 31.4" transform="rotate(-90 25 25)">
@@ -16,6 +15,7 @@
             </circle>
         </svg>
     </div>
+    <!-- Menu do site -->
     <header>
         <div class="logo">Neo3D</div>
         <nav>
@@ -26,32 +26,38 @@
             </ul>
         </nav>
     </header>
-    
+    <!-- Corpo do site -->
     <main class="container">
+        <!-- Seção sobre os produtos da empresa -->
         <section class="hero">
             <h1 class="title">O FUTURO EM 3D</h1>
             <p>Peças exclusivas, design de ponta, impressão sob demanda.</p>
             <a href="#"><button class="catalog">EXPLORAR CATÁLOGO</button></a>
         </section>
         
+        <!-- Seção sobre peças em destaque -->
         <section class="date" id="destaque">
             <h2 class="sub">Peças em Destaque</h2>
             <div class="destaque-item">
+                <!-- Peça 1 -->
                 <div class="destaque1">
                     <img src="https://picsum.photos/200/300" alt="Destaque 1">
                     <hr class="hr1">
                     <h3>Peça 3D</h3>
                 </div>
+                <!-- Peça 2 -->
                 <div class="destaque2">
                     <img src="https://picsum.photos/200/300" alt="Destaque 2">
                     <hr class="hr1">
                     <h3>Peça 3D</h3>
                 </div>
+                <!-- Peça 3 -->
                 <div class="destaque3">
                     <img src="https://picsum.photos/200/300" alt="Destaque 3">
                     <hr class="hr1">
                     <h3>Peça 3D</h3>
                 </div>
+                <!-- Peça 4 -->
                 <div class="destaque4">
                     <img src="https://picsum.photos/200/300" alt="Destaque 4">
                     <hr class="hr1">
@@ -59,7 +65,7 @@
                 </div>
             </div>
         </section>
-
+        <!-- Seção sobre a empresa -->
         <section class="about" id="sobre">
             <h2 class="sub">Quem Somos</h2>
             <p>Especialistas em impressão 3D de alta precisão para entusiastas, designers e indústrias.</p>
@@ -81,8 +87,9 @@
                 <textarea id="pedido" placeholder="Pedido a ser realizado..." required></textarea>
 
                 <label for="observacoes">Observação (Opcional)</label>
-                <textarea id="observacoes" placeholder="Observações..."></textarea>
+                <textarea id="observacoes" placeholder="Observações..."></textarea> <br>
 
+                <input type="reset"> <br>
                 <button type="submit">Enviar</button>
             </form>
         </section>
