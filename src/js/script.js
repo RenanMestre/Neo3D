@@ -110,3 +110,25 @@ document.getElementById("formContato").addEventListener("submit", function(e) {
     window.open(link, '_blank');
 });
 
+window.addEventListener('scroll', function() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 60) {
+        header.classList.add('transparent');
+    } else {
+        header.classList.remove('transparent');
+    }
+});
+
+const menuToggle = document.getElementById('menuToggle');
+const nav = document.querySelector('header nav');
+
+menuToggle.addEventListener('click', () => {
+    nav.classList.toggle('open');
+});
+
+// Fecha o menu ao clicar em um link (opcional)
+nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        nav.classList.remove('open');
+    });
+});
