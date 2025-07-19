@@ -1,3 +1,4 @@
+/* Reset e configurações globais */
 * {
     margin: 0;
     padding: 0;
@@ -7,11 +8,12 @@
     text-decoration: none;
 }
 
+/* Suaviza o scroll ao navegar por âncoras */
 html {
     scroll-behavior: smooth;
 }
 
-/* Loader */
+/* Loader de carregamento da página */
 #loader {
     position: fixed;
     top: 0; left: 0;
@@ -28,7 +30,7 @@ html {
     pointer-events: none;
 }
 
-/* Paleta baseada em src/img/Paleta de cores.jpg */
+/* Paleta de cores baseada na imagem fornecida */
 :root {
     --azul-neon: #00f7ff;
     --roxo-neon: #f365f3;
@@ -37,7 +39,7 @@ html {
     --branco: #ffffff;
 }
 
-/* Fade-in body */
+/* Efeito fade-in no carregamento do body */
 body {
     background-color: var(--azul-escuro);
     color: var(--cinza-claro);
@@ -49,6 +51,7 @@ body.loaded {
     opacity: 1;
 }
 
+/* Header fixo no topo com fundo azul escuro */
 header {
     position: fixed;
     width: 100vw;
@@ -63,9 +66,11 @@ header {
     box-shadow: 0 2px 16px rgba(0, 247, 255, 0.08);
     transition: background 0.5s;
 }
+/* Header transparente ao rolar */
 header.transparent {
     background: rgba(7, 1, 43, 0.7); /* Tom mais escuro e sóbrio */
 }
+/* Logo no header */
 header .logo {
     font-size: 1.5rem;
     color: var(--azul-neon);
@@ -73,12 +78,14 @@ header .logo {
     display: flex;
     align-items: center;
 }
+/* Imagem da logo */
 .logo img {
     width: 75px;
     height: 75px;
     border-radius: 25%;
     transition: transform 0.3s, box-shadow 0.3s;
 }
+/* Navegação principal */
 header nav ul {
     display: flex;
     gap: 40px;
@@ -88,6 +95,7 @@ header nav ul li {
     position: relative;
     padding: 5px 0;
 }
+/* Linha animada ao passar mouse no menu */
 header nav ul li:after {
     content: '';
     position: absolute;
@@ -101,6 +109,7 @@ header nav ul li:after {
 header nav ul li:hover::after {
     width: 100%;
 }
+/* Links do menu */
 header a {
     color: rgb(255, 255, 255);
     font-weight: 600;
@@ -110,7 +119,7 @@ header a:hover {
     color: var(--roxo-neon);
 }
 
-/* Hero */
+/* Seção principal (hero) */
 .hero {
     text-align: center;
     margin-top: 120px;
@@ -126,6 +135,7 @@ header a:hover {
     font-size: 1.2rem;
     margin-bottom: 25px;
 }
+/* Botão do catálogo com gradiente e efeito hover */
 .hero button.catalog {
     background: linear-gradient(45deg, var(--roxo-neon), var(--azul-neon));
     padding: 16px 36px;
@@ -160,7 +170,7 @@ header a:hover {
     left: 120%;
 }
 
-/* Subtítulos */
+/* Subtítulos das seções */
 .sub {
     font-size: 2.2rem;
     color: var(--azul-neon);
@@ -170,7 +180,7 @@ header a:hover {
     text-align: center;
 }
 
-/* Peças em Destaque */
+/* Peças em Destaque - grid responsivo */
 .destaque-item {
     display: flex;
     flex-wrap: wrap;
@@ -178,6 +188,7 @@ header a:hover {
     gap: 32px;
     margin-bottom: 40px;
 }
+/* Card de cada peça em destaque */
 .destaque1, .destaque2, .destaque3, .destaque4 {
     border-radius: 18px;
     padding: 25px 18px 18px 18px;
@@ -192,6 +203,7 @@ header a:hover {
     background-clip: padding-box;
     z-index: 1;
 }
+/* Borda gradiente animada */
 .destaque1::before,
 .destaque2::before,
 .destaque3::before,
@@ -210,6 +222,7 @@ header a:hover {
     pointer-events: none;
     z-index: -1;
 }
+/* Efeito hover nas peças */
 .destaque1:hover,
 .destaque2:hover,
 .destaque3:hover,
@@ -217,12 +230,14 @@ header a:hover {
     border-color: var(--roxo-neon);
     box-shadow: 0 0 24px var(--roxo-neon), 0 1.5px 8px #000;
 }
+/* Imagem das peças */
 .destaque-item img {
     width: 350px;
     height: 350px;
     object-fit: contain;
     margin-bottom: 10px;
 }
+/* Linha decorativa */
 .hr1 {
     width: 100%;
     height: 2px;
@@ -231,6 +246,7 @@ header a:hover {
     border: none;
     opacity: 0.5;
 }
+/* Título das peças */
 .destaque-item h3 {
     color: white;
     font-size: 1.1rem;
@@ -241,14 +257,14 @@ header a:hover {
     letter-spacing: 1px;
 }
 
-/* Sobre */
+/* Seção Sobre */
 .about {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 50px 0;
 }
-/* Sobre */
+/* Imagem da seção Sobre */
 .about img {
     width: 420px;
     height: 420px;
@@ -271,7 +287,7 @@ header a:hover {
     color: #e0e0e0;
 }
 
-/* Formulário */
+/* Formulário de contato */
 .form {
     margin-bottom: 40px;
 }
@@ -293,7 +309,6 @@ header a:hover {
     font-weight: 600;
     margin: 0 0 10px 0;
 }
-
 .form textarea{
     height: 100px;
     max-height: 200px;
@@ -337,12 +352,11 @@ header a:hover {
     background: linear-gradient(45deg, var(--roxo-neon), var(--azul-neon));
     transform: translateY(-2px) scale(1.03);
 }
-
 .form small {
     margin: 5px 0 15px 0;
 }
 
-/* Footer */
+/* Footer (rodapé) */
 footer {
     background: linear-gradient(90deg, var(--azul-escuro) 0%, #1a1a4d 100%);
     color: var(--branco);
@@ -353,6 +367,7 @@ footer {
     box-shadow: 0 -2px 16px rgba(0, 247, 255, 0.08);
     border-top: 2px solid var(--azul-neon);
 }
+/* Links do rodapé */
 footer a {
     color: #f365f3;
     text-decoration: none;
@@ -365,6 +380,7 @@ footer a:hover {
     text-shadow: 0 0 8px #00f7ff88;
 }
 
+/* Responsividade dos ícones sociais no footer */
 @media (max-width: 700px) {
     .footer-social {
         gap: 18px;
@@ -379,6 +395,7 @@ footer a:hover {
     }
 }
 
+/* Tag antiga do footer (não utilizada, pode remover se não usar) */
 footer a .tag {
     color: white;
     transition: fill 0.3s;
@@ -393,6 +410,7 @@ footer a .tag {
     word-break: break-all;
 }
 
+/* Container dos ícones sociais do footer */
 .footer-social {
     display: flex;
     flex-direction: row;
@@ -401,6 +419,7 @@ footer a .tag {
     align-items: center;
     margin-bottom: 10px;
 }
+/* Estilo base dos ícones sociais */
 .footer-social .icon-link {
     display: flex;
     align-items: center;
@@ -414,25 +433,29 @@ footer a .tag {
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     text-decoration: none;
 }
+/* Hover Instagram: gradiente colorido */
 .footer-social .icon-link.instagram:hover {
     background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
     color: #fff;
 }
+/* Hover LinkedIn: azul LinkedIn */
 .footer-social .icon-link.linkedin:hover {
     background: #0077b5;
     color: #fff;
 }
+/* Foco acessível nos ícones */
 .footer-social .icon-link:focus {
     outline: 2px solid #00f7ff;
     outline-offset: 2px;
 }
+/* Tamanho dos SVGs dos ícones */
 .footer-social svg {
     width: 24px;
     height: 24px;
     display: block;
 }
 
-/* Menu hamburguer - escondido em desktop */
+/* Menu hamburguer (mobile) - escondido em desktop */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -453,7 +476,7 @@ footer a .tag {
     display: block;
 }
 
-/* Menu mobile fechado */
+/* Menu mobile fechado (nav escondido à direita) */
 header nav {
     transition: right 0.4s;
 }

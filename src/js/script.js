@@ -1,4 +1,4 @@
-// Loader e transição de fade-in
+// Loader e transição de fade-in ao carregar a página
 window.addEventListener('DOMContentLoaded', function() {
     const loader = document.getElementById('loader');
     document.body.classList.add('loaded');
@@ -7,10 +7,8 @@ window.addEventListener('DOMContentLoaded', function() {
     }, 600);
 });
 
-// Desabilitando teclas para a segurança do site
+// Desabilita teclas de atalho para inspeção de código (F12, Ctrl+Shift+I/J, Ctrl+U)
 document.addEventListener("keydown", function(event) {
-    // Desabilitando F12, Ctrl+Shift+I que são inspeção de código, Ctrl+Shift+J e Ctrl+U para console e ver fonte
-    // Isso é uma medida de segurança para evitar que usuários vejam o código fonte do site
     if (event.key === "F12" || 
         (event.ctrlKey && event.shiftKey && (event.key === "I" || event.key === "J")) || 
         (event.ctrlKey && event.key === "u")) {
@@ -18,6 +16,7 @@ document.addEventListener("keydown", function(event) {
     }
 });
 
+// Atualiza contador de caracteres do campo "observações" em tempo real
 document.addEventListener('DOMContentLoaded', function() {
     const textarea = document.getElementById('observacoes');
     const contador = document.getElementById('observacoes-contador');
@@ -29,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Atualiza contador de caracteres do campo "pedido" em tempo real
 document.addEventListener('DOMContentLoaded', function() {
     const textarea = document.getElementById('pedido');
     const contador = document.getElementById('pedido-contador');
@@ -40,45 +40,45 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Atualiza contador ao digitar
+// Função utilitária para atualizar contadores de caracteres (não usada nos eventos acima)
 function updateCounter(textareaId, counterId, max) {
     const textarea = document.getElementById(textareaId);
     const counter = document.getElementById(counterId);
     textarea.addEventListener('input', function() {
-    const restante = max - textarea.value.length;
-    counter.textContent = `${restante} caracteres restantes`;
+        const restante = max - textarea.value.length;
+        counter.textContent = `${restante} caracteres restantes`;
     });
 }
 updateCounter('pedido', 'pedido-contador', 100);
 updateCounter('observacoes', 'observacoes-contador', 150);
 
-// Reseta contador ao resetar o form
+// Reseta os contadores ao resetar o formulário
 document.getElementById('formContato').addEventListener('reset', function() {
     document.getElementById('pedido-contador').textContent = '100 caracteres restantes';
     document.getElementById('observacoes-contador').textContent = '150 caracteres restantes';
 });
 
-// Mascarando o telefone da pessoa
+// Mascara o campo de telefone enquanto o usuário digita
 document.getElementById('telefone').addEventListener('input', function (e) {
-  let valor = e.target.value.replace(/\D/g, ''); // remove tudo que não for número
+    let valor = e.target.value.replace(/\D/g, ''); // Remove tudo que não for número
 
-  if (valor.length > 11) valor = valor.slice(0, 11); // limita a 11 dígitos
+    if (valor.length > 11) valor = valor.slice(0, 11); // Limita a 11 dígitos
 
-  // Aplica a máscara
-  if (valor.length > 0) {
-    valor = '(' + valor;
-  }
-  if (valor.length > 3) {
-    valor = valor.slice(0, 3) + ') ' + valor.slice(3);
-  }
-  if (valor.length > 10) {
-    valor = valor.slice(0, 10) + '-' + valor.slice(10);
-  }
+    // Aplica a máscara (formato: (xx) xxxxx-xxxx)
+    if (valor.length > 0) {
+        valor = '(' + valor;
+    }
+    if (valor.length > 3) {
+        valor = valor.slice(0, 3) + ') ' + valor.slice(3);
+    }
+    if (valor.length > 10) {
+        valor = valor.slice(0, 10) + '-' + valor.slice(10);
+    }
 
-  e.target.value = valor;
+    e.target.value = valor;
 });
 
-// Enviando o foormulário para o WhatsApp
+// Envia o formulário para o WhatsApp ao clicar em "Enviar"
 document.getElementById("formContato").addEventListener("submit", function(e) {
     e.preventDefault(); // Impede o envio tradicional do formulário
 
@@ -89,10 +89,10 @@ document.getElementById("formContato").addEventListener("submit", function(e) {
     const pedido = document.getElementById("pedido").value;
     const observacoes = document.getElementById("observacoes").value;
 
-    // Criando a mensagem para o WhatsApp
+    // Monta a mensagem para o WhatsApp
     const mensagem = `Olá! Meu nome é *${nome}*, prazer em conhecê-lo!\n\n*Email:* ${email}\n*Telefone:* ${telefone}\n*Pedido:* ${pedido}\n*Observações:*\n${observacoes}`;
 
-    // Número do responsável criptografado Base64
+    // Número do responsável criptografado em Base64
     const numeroResponsavelCripto = "NTUxMTk4NDU0Nzg4NA==";
 
     // Função para decodificar Base64
@@ -100,16 +100,17 @@ document.getElementById("formContato").addEventListener("submit", function(e) {
         return atob(str);
     }
     
-    // Carregar o número depois de decodificar
+    // Decodifica o número do responsável
     const numeroResponsavel = decodificar(numeroResponsavelCripto);
 
-    // Monta o link do WhatsApp
+    // Monta o link do WhatsApp com a mensagem pronta
     const link = `https://wa.me/${numeroResponsavel}?text=${encodeURIComponent(mensagem)}`;
 
-    // Abre o WhatsApp com a mensagem pronta
+    // Abre o WhatsApp em nova aba
     window.open(link, '_blank');
 });
 
+// Altera o fundo do header para transparente ao rolar a página
 window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
     if (window.scrollY > 60) {
@@ -119,6 +120,7 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// Menu hamburguer: abre/fecha o menu em dispositivos móveis
 const menuToggle = document.getElementById('menuToggle');
 const nav = document.querySelector('header nav');
 
@@ -126,7 +128,7 @@ menuToggle.addEventListener('click', () => {
     nav.classList.toggle('open');
 });
 
-// Fecha o menu ao clicar em um link (opcional)
+// Fecha o menu mobile ao clicar em qualquer link do menu
 nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
         nav.classList.remove('open');
