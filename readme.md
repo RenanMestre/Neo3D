@@ -2,7 +2,7 @@
   <img src="logo.png" alt="Neo3D" width="180"/>
 </p>
 
-<h1 align="center">Neo3D - Sistema Web</h1>
+<h1 align="center">ArizDesign - Sistema Web</h1>
 
 <p align="center">
   <b>Site desenvolvido por Renan Mestre para Guilherme Ariz</b>
@@ -74,5 +74,5 @@ Para dúvidas ou sugestões, entre em contato pelo formulário do site ou direta
 ---
 
 <p align="center">
-  <b>Neo3D &copy; 2025 - Todos os direitos reservados</b>
+  <b>ArizDesign &copy; 2025 - Todos os direitos reservados</b>
 </p>
